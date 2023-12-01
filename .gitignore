@@ -1,0 +1,5 @@
+auth-api/node_modules
+auth-api/.env
+recycling-api/node_modules
+recycling-api/.env
+.DS_Store
