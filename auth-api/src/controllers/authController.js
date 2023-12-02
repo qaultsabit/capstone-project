@@ -1,4 +1,3 @@
-// authController.js
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
@@ -35,7 +34,6 @@ exports.register = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return res.status(400).json({ error: true, message: 'Invalid email format' });
@@ -44,6 +42,10 @@ exports.register = async (req, res) => {
     const existingUser = await User.findByEmail(email);
     if (existingUser) {
       return res.status(409).json({ error: true, message: 'Email is already registered' });
+    }
+
+    if (password.length < 8) {
+      return res.status(400).json({ error: true, message: 'Password must be at least 8 characters long' });
     }
 
     const newUser = new User(name, email, password);

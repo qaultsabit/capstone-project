@@ -4,13 +4,18 @@ const { bucket } = require('../utils/cloudStorageConfig');
 
 const addRecycling = async (req, res) => {
   try {
-    const { nama, barang, kategori, recycling, description } = req.body;
+    const userRef = db.collection('users').doc(req.user.userId);
+    const user = await userRef.get();
+    const userName = user.data().name;
+
+    const { barang, kategori, recycling, description } = req.body;
     const photoBuffer = req.file ? req.file.buffer : null;
 
-    // Generate unique filename using uuidv4
-    const fileName = uuidv4();
+    if (!photoBuffer) {
+      return res.status(400).json({ error: true, message: 'No image provided' });
+    }
 
-    // Upload image to GCS
+    const fileName = uuidv4();
     const file = bucket.file(fileName);
     const stream = file.createWriteStream({
       metadata: {
@@ -28,14 +33,13 @@ const addRecycling = async (req, res) => {
         // Save recycling data to Firestore
         const userResultsRef = db.collection('users').doc(req.user.userId).collection('results').doc();
         const newCoins = 10; 
-        const coinsData = { coins: newCoins };
         await userResultsRef.set({
-          nama,
+          nama: userName,
           barang,
           kategori,
           recycling,
           description,
-          ...coinsData,
+          coins: newCoins,
           photoUrl: `https://storage.googleapis.com/${bucket.name}/${file.name}`,
         }, { merge: true });
 

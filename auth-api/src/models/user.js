@@ -1,4 +1,3 @@
-// user.js
 const { db } = require('../utils/firebaseConfig');
 
 class User {
