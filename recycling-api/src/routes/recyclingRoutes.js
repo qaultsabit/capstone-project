@@ -5,7 +5,7 @@ const { multer } = require('../utils/multerConfig');
 
 const router = express.Router();
 
-router.post('/recycling', authMiddleware, multer.single('photo'), addRecycling);
+router.post('/add', authMiddleware, multer.single('photo'), addRecycling);
 router.get('/results', authMiddleware, getUserRecyclingResults);
 router.get('/results/:id', authMiddleware, getDetailUserRecyclingResults);
 

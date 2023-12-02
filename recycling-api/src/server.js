@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/', recyclingRoutes);
+app.use('/recycling', recyclingRoutes);
 
 const PORT = process.env.PORT;
 
