@@ -12,7 +12,7 @@
    - description (string)
    - photo (file)
 - **Response:**
-   - status code: `200`
+   - status code: `201`
       ```json
       {
          "error": false,
