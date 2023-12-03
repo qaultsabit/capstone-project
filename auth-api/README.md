@@ -12,8 +12,8 @@
          "error": false,
          "message": "success",
          "loginResult": {
-             "userId": "user._id",
-             "name": "user.name",
+             "userId": "userId",
+             "name": "userName",
              "token": "token"
         }
       }
