@@ -52,7 +52,8 @@
                   "description": "description",                  
                   "photoUrl": "https://storage.googleapis.com/",
                   "coins": 10
-              }
+              },
+              ...
           ]
       }
       ```
