@@ -1,10 +1,10 @@
 ## Endpoints
-### 1. Add Recycling
+### 1. Add User Recycling
 - **URL**: `/recycling/add`
 - **Method**: `POST`
 - **Headers**:
    - Content_Type: multipart/form-data
-   - Authorization: Bearer <token>
+   - Authorization: Bearer Token
 - **Request Body**:
    - barang (string)
    - kategori (string)
@@ -25,7 +25,7 @@
 - **URL**: `/recycling/results`
 - **Method**: `GET`
 - **Headers**:
-   - Authorization: Bearer <token>
+   - Authorization: Bearer Token
 - **Response:**
    - status code: `200`
       ```json
@@ -62,7 +62,7 @@
 - **URL**: `/recycling/results/:id`
 - **Method**: `GET`
 - **Headers**:
-   - Authorization: Bearer <token>
+   - Authorization: Bearer Token
 - **Response:**
    - status code: `200`
       ```json
@@ -79,5 +79,19 @@
               "photoUrl": "https://storage.googleapis.com/",
               "coins": 10
           }
+      }
+      ```
+
+### 4. Delete User Recycling
+- **URL**: `/recycling/delete/:id`
+- **Method**: `DELETE`
+- **Headers**:
+   - Authorization: Bearer Token
+- **Response:**
+   - status code: `200`
+      ```json
+      {
+          "error": false,
+          "message": "Data recycling berhasil dihapus",
       }
       ```
