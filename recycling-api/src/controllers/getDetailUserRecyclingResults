@@ -1,0 +1,30 @@
+const firebaseService = require('../services/firebaseService');
+
+const getDetailUserRecyclingResults = async (req, res) => {
+  try {
+    const resultId = req.params.id;
+    const resultRef = firebaseService.getUserResultsRef(req.user.userId).doc(resultId);
+    const result = await resultRef.get();
+
+    if (!result.exists) {
+      res.json({
+        error: true,
+        message: 'Result not found',
+      });
+      return;
+    }
+
+    res.json({
+      error: false,
+      message: 'User Recycling Result fetched successfully',
+      recycling: { id: result.id, ...result.data() },
+    });
+  } catch (error) {
+    res.json({
+      error: true,
+      message: error.message,
+    });
+  }
+};
+
+module.exports = getDetailUserRecyclingResults;

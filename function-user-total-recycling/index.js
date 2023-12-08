@@ -9,7 +9,7 @@ const app = express();
 app.get('/', async (req, res) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
-    const decoded = jwt.verify(token, 'ch2-psy491');
+    const decoded = jwt.verify(token, 'secret'); // secret token
     req.user = decoded;
     const userDoc = await admin.firestore().collection('users').doc(req.user.userId).get();
     const resultsSnapshot = await admin.firestore().collection('users').doc(req.user.userId).collection('results').get();
