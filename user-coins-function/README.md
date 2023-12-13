@@ -8,9 +8,10 @@
    - status code: `200`
       ```json
       {
-          "name": "userName",
-          "coins": 50,
-          "listRecycling": 5
+          "name":
+          "coins":
+          "listRecycling":
+          "totalWithdraw":
       }
       ```
 
@@ -25,7 +26,7 @@
    - status code: `200`
      ```json
      {
-        "updateCoins": 45
+         "updateCoins":
      }
      ```
      
