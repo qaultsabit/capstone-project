@@ -17,7 +17,7 @@
       {
          "error": false,
          "message": "success",
-         "coins": 10
+         "coins": 1000
       }
       ```
 
@@ -41,7 +41,7 @@
                   "recycling": "recycling",
                   "description": "description",                  
                   "photoUrl": "https://storage.googleapis.com/",
-                  "coins": 10
+                  "coins": 1000
               },
               {
                   "id": "recyclingId",
@@ -51,7 +51,7 @@
                   "recycling": "recycling",
                   "description": "description",                  
                   "photoUrl": "https://storage.googleapis.com/",
-                  "coins": 10
+                  "coins": 1000
               },
               ...
           ]
@@ -77,7 +77,7 @@
               "recycling": "recycling",
               "description": "description",                  
               "photoUrl": "https://storage.googleapis.com/",
-              "coins": 10
+              "coins": 1000
           }
       }
       ```
