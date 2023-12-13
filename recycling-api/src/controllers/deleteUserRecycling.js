@@ -16,9 +16,6 @@ const deleteUserRecycling = async (req, res) => {
 
     await resultRef.delete();
 
-    // Update user's coins in Firestore
-    await firebaseService.updateUserCoins(req.user.userId, -10);
-
     res.status(200).json({
       error: false,
       message: 'Data recycling berhasil dihapus',

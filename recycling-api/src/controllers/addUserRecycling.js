@@ -17,7 +17,7 @@ const addUserRecycling = async (req, res) => {
 
     // Save recycling data to Firestore
     const userResultsRef = firebaseService.getUserResultsRef(req.user.userId).doc();
-    const newCoins = 10;
+    const newCoins = 1000;
     await userResultsRef.set({
       nama: userName,
       barang,
