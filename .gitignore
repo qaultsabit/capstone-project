@@ -2,4 +2,8 @@ auth-api/node_modules
 auth-api/.env
 recycling-api/node_modules
 recycling-api/.env
+articles-api/node_modules
+articles-api/.env
+favorite-api/node_modules
+favorite-api/.env
 .DS_Store
