@@ -15,7 +15,7 @@
 - **Method**: `GET`
 - **Headers**: Authorization: Bearer Token
 
-### 4. Delete User Recycling
+### 4. Delete Favorite Article
 - **URL**: `/user/favorite/:id`
 - **Method**: `DELETE`
 - **Headers**: Authorization: Bearer Token
